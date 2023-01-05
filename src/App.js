@@ -1,5 +1,4 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
 
 import NavTabs from './components/NavTabs';
 import Footer from "./components/Footer";
@@ -12,10 +11,14 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 
+// Custom theme for mui
 const theme = createTheme({
   palette: {
     primary: {
       main: '#1a6017',
+    },
+    secondary: {
+      main: '#5e1760'
     },
     background: {
       default: '#dedede'
@@ -31,23 +34,33 @@ const theme = createTheme({
 });
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState('About');
+
+  const renderPage = () => {
+    if (currentPage === 'About') {
+      return <About />;
+    }
+    if (currentPage === 'Portfolio') {
+      return <Portfolio />;
+    }
+    if (currentPage === 'Resume') {
+      return <Resume />;
+    }
+    return <Contact />;
+  };
+
+  const handlePageChange = (page) => setCurrentPage(page);
+
   return (
     <ThemeProvider theme={theme}>
-      <Router>
-        <CssBaseline />
-        <Box sx={{ minHeight: '100vh', position: 'relative' }}>
-          <NavTabs />
-          <Box sx={{ paddingBottom: 8 }}>
-            <Routes>
-              <Route path='/' element={<About />} />
-              <Route path='/portfolio' element={<Portfolio />} />
-              <Route path='/resume' element={<Resume />} />
-              <Route path='/contact' element={<Contact />} />
-            </Routes>
-          </Box>
-          <Footer />
+      <CssBaseline />
+      <Box sx={{ minHeight: '100vh', position: 'relative' }}>
+        <NavTabs currentPage={currentPage} handlePageChange={handlePageChange}/>
+        <Box sx={{ paddingBottom: 8 }}>
+          {renderPage()}
         </Box>
-      </Router>
+        <Footer />
+      </Box>
     </ThemeProvider>
   );
 }
