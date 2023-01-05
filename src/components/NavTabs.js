@@ -1,40 +1,24 @@
 import React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
-function NavTabs({ currentPage, handlePageChange }) {
+export default function NavTabs() {
   return (
-    <nav className="navbar navbar-expand">
-      <span className="navbar-brand h1 ms-3">Noah Brimhall</span>
-      <ul className="nav nav-tabs">
-        <li className="nav-item">
-          <a
-            href="#about"
-            onClick={() => handlePageChange('About')}
-            className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
-          >
-            About
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="#portfolio"
-            onClick={() => handlePageChange('Portfolio')}
-            className={currentPage === 'Portfolio' ? 'nav-link active' : 'nav-link'}
-          >
-            Portfolio
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="#resume"
-            onClick={() => handlePageChange('Resume')}
-            className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
-          >
-            Resume
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Noah Brimhall
+          </Typography>
+          <Button color="inherit" href='/'>About</Button>
+          <Button color="inherit" href='/portfolio'>Portfolio</Button>
+          <Button color="inherit" href='/resume'>Resume</Button>
+          <Button color="inherit" href='/contact'>Contact</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
-
-export default NavTabs;
