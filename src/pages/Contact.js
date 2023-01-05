@@ -14,7 +14,8 @@ export default function Contact() {
     message: '',
     nameError: false,
     emailError: false,
-    messageError: false
+    messageError: false,
+    formatError: false
   });
 
   const handleChange = (event) => {
@@ -26,6 +27,7 @@ export default function Contact() {
     let nameError = false;
     let emailError = false;
     let messageError = false;
+    let formatError = false;
 
     event.preventDefault();
     if (form.name === '') {
@@ -37,8 +39,11 @@ export default function Contact() {
     if (form.message === '') {
       messageError = true;
     }
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(form.email)) {
+      formatError = true;
+    }
 
-    setForm({ ...form, nameError, emailError, messageError});
+    setForm({ ...form, nameError, emailError, messageError, formatError});
 
     console.log(form);
   }
@@ -61,8 +66,8 @@ export default function Contact() {
               label='Name'
             />
             <TextField
-              error={form.emailError}
-              helperText={form.emailError ? 'Required' : ''}
+              error={form.emailError || form.formatError}
+              helperText={form.emailError ? 'Required' : form.formatError ? 'Invalid Email Adress' : ''}
               required
               name='email'
               value={form.email}
