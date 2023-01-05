@@ -10,10 +10,10 @@ import Typography from '@mui/material/Typography';
 
 export default function ProjectCard({ project }) {
   return (
-    <Grid xs={12} md={6} lg={4}>
+    <Grid xs={12} sm={6} lg={4}>
       <Card elevation={12}>
       <CardMedia
-        sx={{ height: 260 }}
+        sx={{ height: 200 }}
         image={project.img}
         title="Connect With Me"
       />

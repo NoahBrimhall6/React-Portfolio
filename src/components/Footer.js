@@ -16,8 +16,8 @@ export default function Footer() {
         spacing={4}
       >
         <Button color="inherit" href='https://github.com/NoahBrimhall6'>github</Button>
-        <Button color="inherit" href='/'>linkedin</Button>
-        <Button color="inherit" href='/'>stackoverflow</Button>
+        <Button color="inherit" href='https://www.linkedin.com/in/noah-brimhall-6680a0245/'>linkedin</Button>
+        <Button color="inherit" href='https://stackoverflow.com/users/19530003/noahbrimhall'>stackoverflow</Button>
       </Stack>
       </Toolbar>
     </AppBar>
