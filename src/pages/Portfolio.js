@@ -18,7 +18,7 @@ const projects = [
     title: 'Connect With Me',
     desc: 'My second fullstack group application. This is my flagship project built with the MERN stack.',
     github: 'https://github.com/NoahBrimhall6/Connect-With-Me',
-    deployed: ''
+    deployed: 'https://connect-with-me.herokuapp.com/'
   },
   {
     img: CodeQuizImg,
