@@ -6,42 +6,18 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 
-export default function Resume() {
-  const download = () => {
-    const texts = [
-      "Resume", 
-      "Frontend Proficencies", 
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Bootstrap",
-      "TailwindCSS",
-      "MaterialUI",
-      "Backend Proficencies",
-      "APIs",
-      "Node.js",
-      "Express.js",
-      "SQL",
-      "noSQL",
-      "mongoDB",
-      "Apollo",
-      "GraphQL"
-    ];
+import resume from '../../src/assets/files/Resume.pdf';
+import { ClassNames } from '@emotion/react';
 
-    const file = new Blob([texts.join('\n')], {type: 'text/plain'});
-    const element = document.createElement("a");
-    element.href = URL.createObjectURL(file);
-    element.download = "NoahBrimhallResume-" + Date.now() + ".txt";
-    document.body.appendChild(element);
-    element.click();
-  };
+export default function Resume() {
 
   return (
     <Container maxWidth="sm" sx={{ marginY: 6 }}>
       <Paper elevation={12}>
         <Box padding={2}>
-          <Button variant="contained" onClick={download} sx={{ marginBottom: 2 }}>Download Resume</Button>
+          <a href={resume} download="NoahBrimhallResume" target="_blank">
+            <Button variant="contained" sx={{ marginBottom: 2 }}>Download Resume</Button>
+          </a>
           <Typography variant="h3" gutterBottom>
             Frontend Proficencies
           </Typography>
