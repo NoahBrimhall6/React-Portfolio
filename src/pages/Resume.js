@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
@@ -10,6 +10,9 @@ import resume from '../../src/assets/files/Resume.pdf';
 import { ClassNames } from '@emotion/react';
 
 export default function Resume() {
+  useEffect(() => {
+    document.title = 'Resume';
+  }, []);
 
   return (
     <Container maxWidth="sm" sx={{ marginY: 6 }}>

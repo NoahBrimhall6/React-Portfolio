@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 
 import Container from '@mui/material/Container';
@@ -58,6 +58,10 @@ const projects = [
 ];
 
 export default function Portfolio() {
+  useEffect(() => {
+    document.title = 'Portfolio';
+  }, []);
+
   return (
     <Container maxWidth="xl" sx={{ marginY: 4 }}>
       <Typography variant="h4" gutterBottom>

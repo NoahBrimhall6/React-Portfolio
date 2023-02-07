@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
@@ -9,6 +9,10 @@ import Stack from '@mui/material/Stack';
 import profileImg from '../assets/profile.JPG';
 
 export default function About() {
+  useEffect(() => {
+    document.title = 'About';
+  }, []);
+
   return (
     <Container maxWidth="sm" sx={{ marginY: 6 }}>
       <Paper elevation={16}>

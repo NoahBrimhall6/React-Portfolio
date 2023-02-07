@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
@@ -8,6 +8,10 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
 export default function Contact() {
+  useEffect(() => {
+    document.title = 'Contact';
+  }, []);
+  
   const [form, setForm] = useState({
     name: '',
     email: '',
