@@ -86,6 +86,7 @@ export default function Contact() {
               maxRows={12}
             />
             <Button variant='contained' onClick={handleSubmit}>Submit</Button>
+            <Typography variant='overline'>Email me at noahbrimhall6@gmail.com</Typography>
           </Stack>
         </Box>
       </Paper>
