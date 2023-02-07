@@ -6,8 +6,7 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 
-import resume from '../../src/assets/files/Resume.pdf';
-import { ClassNames } from '@emotion/react';
+import resume from '../assets/files/Resume.pdf';
 
 export default function Resume() {
   useEffect(() => {
