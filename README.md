@@ -6,7 +6,7 @@
   
   A portfolio I built using React and MaterialUI.  I has links to 6 of my best deployed projects as well as a resume.
   
-  Deployed at: https://noahbrimhall6.github.io/React-Portfolio/
+  Deployed at: https://noahbrimhall6.github.io/react-portfolio/
   
   ## Table of Contents
 
